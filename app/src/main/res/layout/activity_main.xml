@@ -1,19 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:padding="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- NEW: Host vs Client -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnHost"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Host Chat"/>
+
+        <Button
+            android:id="@+id/btnClient"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Scan &amp; Connect"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <!-- Original Scan button now only when in client mode -->
     <Button
         android:id="@+id/btnScan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Iniciar Scan"/>
+        android:text="Iniciar Scan"
+        android:layout_marginTop="8dp"/>
 
     <ListView
         android:id="@+id/listDevices"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_marginTop="8dp"/>
 </LinearLayout>
